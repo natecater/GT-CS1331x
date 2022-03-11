@@ -1,24 +1,30 @@
+// import java Scanner to take input
 import java.util.Scanner;
 
 public class Calculator{
 	
 	public static void main(String[] args){
-	
+		
+		// prompt user wtih operation choices
 		System.out.println("List of operations: add subtract multiply divide alphabetize");
 		
 		Scanner input = new Scanner(System.in);
-		
+		// prompt user to choose an operation
 		System.out.println("Enter an operation: ");
 		
+		// declare type and accept input
 		String operation;
 		operation = input.nextLine();
 		operation = operation.toLowerCase();
 		
+		// create resusable error response
 		String error = "Invalid input entered. Terminating...";
 		
-		
+		// depending on user's chosen operation, prompt user for input with a type validation
+		// type validation will break out of the switch if the incorrect type is inputted
+		// the corresponding calcs will occur and answer to the operation will be printed if the types are accepted
 		switch(operation){
-		
+			
 			case "add":
 				int add1;
 				int add2;
