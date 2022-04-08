@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 public class Frog {
 
 	//instance variables
@@ -26,6 +28,16 @@ public class Frog {
 	
 	public Frog(String name) {
 		this(name, default_age, default_tongueSpeed);
+	}
+	
+	//setter and getter method
+	
+	public String getSpecies() {
+		return species;
+	}
+	
+	public void setSpecies(String newSpecies) {
+		this.species = newSpecies;
 	}
 	
 	//behavior methods
@@ -88,4 +100,19 @@ public class Frog {
 			}
 		}
 	}
+	
+	//toString override
+	
+	public String toString() {
+		
+		DecimalFormat df = new DecimalFormat("#.00");
+			
+		if (isFroglet == true) {
+			return "My name is " + name + " and I'm a rare froglet! I'm " + age + " months old and my tongue has a speed of " + df.format(tongueSpeed) + ".";
+		}
+		else {
+			return "My name is " + name + " and I'm a rare frog. I'm " + age + " months old and my tongue ahs a speed of "  + df.format(tongueSpeed) + ".";
+		}
+	}
+	
 }
