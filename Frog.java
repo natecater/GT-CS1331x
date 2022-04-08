@@ -21,7 +21,7 @@ public class Frog {
 	
 	public Frog(String name, double ageInYears) {
 		this.name = name;
-		this.ageInYears = 
+		this.ageInYears = (double)((int)(age / 12));
 	}
 	
 	public Frog(String name) {
@@ -69,5 +69,23 @@ public class Frog {
 		
 		age++;
 		
+	}
+	
+	public void eat(Fly fly) {
+		if(fly.isDead() == true) {
+			break;
+		} 
+		else {
+			if (tongueSpeed > fly.speed) {
+				if ((double)fly.mass >= ((double)age* 0.5)){
+					grow(1);
+				}
+				fly.setMass(0);
+				
+			}
+			else {
+				fly.grow(1.0);
+			}
+		}
 	}
 }
